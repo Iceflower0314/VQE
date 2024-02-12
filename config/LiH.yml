@@ -1,0 +1,26 @@
+molecule:
+  name: LiH
+  particle: 2
+  electron: 2
+  spin: 0
+  charge: 0
+  atoms:  'H .0, .0, .0; Li .0, .0, 2.8'
+  occupied: [0]
+  active: [1, 2, 5]
+
+generator:
+  model:  qiskit
+  encoding: jordan_wigner
+  max_cycle: 1000
+  conv_tol: 0.000001
+  hf_cycle: 50000
+
+ansatz:
+  ansatz: UCCSD
+  optimizer:  COBYLA
+  maxiter: 1000
+  refereigensolver: NumPyMinimumEigensolver
+
+setting:
+  accuracy: 1e-8
+  log: True
